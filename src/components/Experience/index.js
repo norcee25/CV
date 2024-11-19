@@ -1,6 +1,6 @@
 import { getDatabase, ref, onValue } from "firebase/database";
 import { useEffect,useState } from "react";
-
+import Education from "../Education";
 
 const Experience= () => {
   const [Experience, setExperience] = useState ({})
@@ -134,6 +134,15 @@ const Experience= () => {
                         </p>
                       </div>{/*/.timeline-content*/}
                     </div>{/*/.timeline*/}
+                  </div>{/*/.col*/}
+                  <div className="col-md-offset-1 col-md-5 experience-time-main">
+                    <div className="experience-time">
+                      <h2>
+                        <span><i className="fa fa-circle" aria-hidden="true" /></span>
+                        {Experience.yearr}
+                      </h2>
+                      <h3>{Experience.filkom}</h3>
+                    </div>{/*/.experience-time*/}
                   </div>{/*/.col*/}
                 </div>
               </div>{/*/.single-timeline-box*/}
