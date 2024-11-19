@@ -52,21 +52,20 @@ const Contact = () => {
             <div className="single-contact-box">
               <div className="contact-adress">
                 <div className="contact-add-head">
-                  <h3>browny star</h3>
-                  <p>uI/uX designer</p>
+                  <h3>Norce Tanaty</h3>
                 </div>
                 <div className="contact-add-info">
                   <div className="single-contact-add-info">
                     <h3>phone</h3>
-                    <p>987-123-6547</p>
+                    <p>08981689711</p>
                   </div>
                   <div className="single-contact-add-info">
                     <h3>email</h3>
-                    <p>browny@info.com</p>
+                    <p>norcetanaty@gmail.com</p>
                   </div>
                   <div className="single-contact-add-info">
                     <h3>website</h3>
-                    <p>www.brownsine.com</p>
+                    <p>www.norce.com</p>
                   </div>
                 </div>
               </div>{/*/.contact-adress*/}

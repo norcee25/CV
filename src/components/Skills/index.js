@@ -10,7 +10,7 @@ const Skills= () => {
           <div className="col-md-6">
             <div className="single-skill-content">
               <div className="barWrapper">
-                <span className="progressText">adobe photoshop</span>
+                <span className="progressText">ui/ux</span>
                 <div className="single-progress-txt">
                   <div className="progress ">
                     <div className="progress-bar" role="progressbar" aria-valuenow={90} aria-valuemin={10} aria-valuemax={100} style={{}}>
@@ -20,7 +20,7 @@ const Skills= () => {
                 </div>
               </div>{/* /.barWrapper */}
               <div className="barWrapper">
-                <span className="progressText">adobe illustrator</span>
+                <span className="progressText">Front End</span>
                 <div className="single-progress-txt">
                   <div className="progress ">
                     <div className="progress-bar" role="progressbar" aria-valuenow={85} aria-valuemin={10} aria-valuemax={100} style={{}}>
@@ -30,7 +30,7 @@ const Skills= () => {
                 </div>
               </div>{/* /.barWrapper */}
               <div className="barWrapper">
-                <span className="progressText">adobe after effects</span>
+                <span className="progressText">Teaching and Mentoring</span>
                 <div className="single-progress-txt">
                   <div className="progress ">
                     <div className="progress-bar" role="progressbar" aria-valuenow={97} aria-valuemin={10} aria-valuemax={100} style={{}}>
@@ -40,7 +40,7 @@ const Skills= () => {
                 </div>
               </div>{/* /.barWrapper */}
               <div className="barWrapper">
-                <span className="progressText">sketch</span>
+                <span className="progressText">Creativity</span>
                 <div className="single-progress-txt">
                   <div className="progress ">
                     <div className="progress-bar" role="progressbar" aria-valuenow={90} aria-valuemin={10} aria-valuemax={100} style={{}}>
@@ -54,7 +54,7 @@ const Skills= () => {
           <div className="col-md-6">
             <div className="single-skill-content">
               <div className="barWrapper">
-                <span className="progressText">html 5</span>
+                <span className="progressText">Interpersonal Skills</span>
                 <div className="single-progress-txt">
                   <div className="progress ">
                     <div className="progress-bar" role="progressbar" aria-valuenow={90} aria-valuemin={10} aria-valuemax={100} style={{}}>
@@ -64,7 +64,7 @@ const Skills= () => {
                 </div>
               </div>{/* /.barWrapper */}
               <div className="barWrapper">
-                <span className="progressText">css 3 animation</span>
+                <span className="progressText">Public Relation</span>
                 <div className="single-progress-txt">
                   <div className="progress ">
                     <div className="progress-bar" role="progressbar" aria-valuenow={85} aria-valuemin={10} aria-valuemax={100} style={{}}>

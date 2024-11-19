@@ -10,7 +10,7 @@ const Header = () => {
             <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
               <i className="fa fa-bars" />
             </button>
-            <a className="navbar-brand" href="index.html">browny</a>
+            <a className="navbar-brand" href="index.html">Norce Tanaty</a>
           </div>{/*/.navbar-header*/}
           {/* End Header Navigation */}
           {/* Collect the nav links, forms, and other content for toggling */}

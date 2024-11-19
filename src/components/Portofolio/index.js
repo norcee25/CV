@@ -11,7 +11,7 @@ const Portofolio = () => {
             <div className="row">
               <div className="col-sm-4">
                 <div className="item">
-                  <img src="assets/images/portfolio/p1.jpg" alt="portfolio image" />
+                  <img src="assets/images/portfolio/tiga.png" alt="portfolio image" />
                   <div className="isotope-overlay">
                     <a href="#">
                       ui/ux design
@@ -19,7 +19,7 @@ const Portofolio = () => {
                   </div>{/* /.isotope-overlay */}
                 </div>{/* /.item */}
                 <div className="item">
-                  <img src="assets/images/portfolio/p2.jpg" alt="portfolio image" />
+                  <img src="assets/images/portfolio/empat.png" alt="portfolio image" />
                   <div className="isotope-overlay">
                     <a href="#">
                       ui/ux design
@@ -29,25 +29,17 @@ const Portofolio = () => {
               </div>{/* /.col */}
               <div className="col-sm-4">
                 <div className="item">
-                  <img src="assets/images/portfolio/p3.jpg" alt="portfolio image" />
+                  <img src="assets/images/portfolio/dua.png" alt="portfolio image" />
                   <div className="isotope-overlay">
                     <a href="#">
-                      web design
+                      Perancangan Sistem
                     </a>
                   </div>{/* /.isotope-overlay */}
                 </div>{/* /.item */}
               </div>{/* /.col */}
               <div className="col-sm-4">
                 <div className="item">
-                  <img src="assets/images/portfolio/p4.jpg" alt="portfolio image" />
-                  <div className="isotope-overlay">
-                    <a href="#">
-                      web development
-                    </a>
-                  </div>{/* /.isotope-overlay */}
-                </div>{/* /.item */}
-                <div className="item">
-                  <img src="assets/images/portfolio/p5.jpg" alt="portfolio image" />
+                  <img src="assets/images/portfolio/satu.png" alt="portfolio image" />
                   <div className="isotope-overlay">
                     <a href="#">
                       web development
