@@ -1,9 +1,21 @@
+import { getDatabase, ref, onValue } from "firebase/database";
+import { useEffect,useState } from "react";
+
 const Portofolio = () => {
+  const [Portofolio, setPortofolio] = useState ({})
+    useEffect (() => {
+        const db = getDatabase();
+        const PortofolioRef = ref(db, "Portofolio");
+        onValue(PortofolioRef, (snapshot) => {
+            const data = snapshot.val();
+            setPortofolio(data);
+        });
+      }, []);
     return (
         <section id="portfolio" className="portfolio">
     <div className="portfolio-details">
       <div className="section-heading text-center">
-        <h2>portfolio</h2>
+        <h2>{Portofolio.title}</h2>
       </div>
       <div className="container">
         <div className="portfolio-content">
@@ -11,38 +23,38 @@ const Portofolio = () => {
             <div className="row">
               <div className="col-sm-4">
                 <div className="item">
-                  <img src="assets/images/portfolio/tiga.png" alt="portfolio image" />
+                  <img src={Portofolio.img3 || ""} alt="portfolio image" />
                   <div className="isotope-overlay">
                     <a href="#">
-                      ui/ux design
+                      {Portofolio.ui}
                     </a>
                   </div>{/* /.isotope-overlay */}
                 </div>{/* /.item */}
                 <div className="item">
-                  <img src="assets/images/portfolio/empat.png" alt="portfolio image" />
+                  <img src={Portofolio.img4 || ""} alt="portfolio image" />
                   <div className="isotope-overlay">
                     <a href="#">
-                      ui/ux design
-                    </a>
-                  </div>{/* /.isotope-overlay */}
-                </div>{/* /.item */}
-              </div>{/* /.col */}
-              <div className="col-sm-4">
-                <div className="item">
-                  <img src="assets/images/portfolio/dua.png" alt="portfolio image" />
-                  <div className="isotope-overlay">
-                    <a href="#">
-                      Perancangan Sistem
+                    {Portofolio.ui}
                     </a>
                   </div>{/* /.isotope-overlay */}
                 </div>{/* /.item */}
               </div>{/* /.col */}
               <div className="col-sm-4">
                 <div className="item">
-                  <img src="assets/images/portfolio/satu.png" alt="portfolio image" />
+                  <img src={Portofolio.img2 || ""} alt="portfolio image" />
                   <div className="isotope-overlay">
                     <a href="#">
-                      web development
+                     {Portofolio.si}
+                    </a>
+                  </div>{/* /.isotope-overlay */}
+                </div>{/* /.item */}
+              </div>{/* /.col */}
+              <div className="col-sm-4">
+                <div className="item">
+                  <img src={Portofolio.img1 || ""} alt="portfolio image" />
+                  <div className="isotope-overlay">
+                    <a href="#">
+                      {Portofolio.web}
                     </a>
                   </div>{/* /.isotope-overlay */}
                 </div>{/* /.item */}

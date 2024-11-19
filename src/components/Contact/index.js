@@ -1,14 +1,26 @@
+import { getDatabase, ref, onValue } from "firebase/database";
+import { useEffect,useState } from "react";
+
 const Contact = () => {
+  const [Contact, setContact ] = useState ({})
+  useEffect (() => {
+      const db = getDatabase();
+      const ContactRef = ref(db, "Contact");
+      onValue(ContactRef, (snapshot) => {
+          const data = snapshot.val();
+          setContact(data);
+      });
+    }, []);
     return (
         <section id="contact" className="contact">
     <div className="section-heading text-center">
-      <h2>contact me</h2>
+      <h2>{Contact.title}</h2>
     </div>
     <div className="container">
       <div className="contact-content">
         <div className="row">
           <div className="col-md-offset-1 col-md-5 col-sm-6">
-            <div className="single-contact-box">
+            <div className="bsingle-contact-box">
               <div className="contact-form">
                 <form>
                   <div className="row">
@@ -52,20 +64,20 @@ const Contact = () => {
             <div className="single-contact-box">
               <div className="contact-adress">
                 <div className="contact-add-head">
-                  <h3>Norce Tanaty</h3>
+                  <h3>{Contact.nama}</h3>
                 </div>
                 <div className="contact-add-info">
                   <div className="single-contact-add-info">
-                    <h3>phone</h3>
-                    <p>08981689711</p>
+                    <h3>{Contact.phone}</h3>
+                    <p>{Contact.nmr}</p>
                   </div>
                   <div className="single-contact-add-info">
-                    <h3>email</h3>
-                    <p>norcetanaty@gmail.com</p>
+                    <h3>{Contact.email}</h3>
+                    <p>{Contact.ad}</p>
                   </div>
                   <div className="single-contact-add-info">
-                    <h3>website</h3>
-                    <p>www.norce.com</p>
+                    <h3>{Contact.website}</h3>
+                    <p>{Contact.ww}</p>
                   </div>
                 </div>
               </div>{/*/.contact-adress*/}

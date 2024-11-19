@@ -1,8 +1,20 @@
+import { getDatabase, ref, onValue } from "firebase/database";
+import { useEffect,useState } from "react";
+
 const About = () => {
+  const [About, setAbout ] = useState ({})
+  useEffect (() => {
+      const db = getDatabase();
+      const AboutRef = ref(db, "About");
+      onValue(AboutRef, (snapshot) => {
+          const data = snapshot.val();
+          setAbout(data);
+      });
+    }, []);
     return(
         <section id="about" className="about">
         <div className="section-heading text-center">
-          <h2>about me</h2>
+          <h2>{About.title}</h2>
         </div>
         <div className="container">
           <div className="about-content">
@@ -10,34 +22,28 @@ const About = () => {
               <div className="col-sm-6">
                 <div className="single-about-txt">
                   <h3>
-                  I am an active student at Universitas Klabat, pursuing a degree in
- Information Systems. I am dedicated to my studies and
- continuously strive to enhance my skills and performance in this
- field. My commitment to learning and personal development
- drives me to excel academically and practically, preparing me for
- future challenges and opportunities in the information systems
- domain
+                  {About.expln}
                   </h3>
                   <p>
-                  Saya adalah mahasiswa aktif di Universitas Klabat, mengambil gelar di bidang Sistem Informasi. Saya berdedikasi pada studi saya dan terus berusaha untuk meningkatkan keterampilan dan kinerja saya di bidang ini. Komitmen saya terhadap pembelajaran dan pengembangan pribadi mendorong saya untuk unggul secara akademis dan praktis, mempersiapkan saya untuk tantangan dan peluang di masa depan dalam prodi sistem informasi.
+                  {About.trnslt}
                   </p>
                   <div className="row">
                     <div className="col-sm-4">
                       <div className="single-about-add-info">
-                        <h3>phone</h3>
-                        <p>08981689711</p>
+                        <h3>{About.phone}</h3>
+                        <p>{About.nomor}</p>
                       </div>
                     </div>
                     <div className="col-sm-4">
                       <div className="single-about-add-info">
-                        <h3>email</h3>
-                        <p>norce@gmail.com</p>
+                        <h3>{About.email}</h3>
+                        <p>{About.my}</p>
                       </div>
                     </div>
                     <div className="col-sm-4">
                       <div className="single-about-add-info">
-                        <h3>website</h3>
-                        <p>www.norce.com</p>
+                        <h3>{About.website}</h3>
+                        <p>{About.www}</p>
                       </div>
                     </div>
                   </div>
@@ -45,7 +51,7 @@ const About = () => {
               </div>
               <div className="col-sm-offset-1 col-sm-5">
                 <div className="single-about-img">
-                  <img src="assets/images/about/me.jpg" alt="profile_image" />
+                  <img src={About.img1 || ""} alt="profile_image" />
                   <div className="about-list-icon">
                     <ul>
                       <li>

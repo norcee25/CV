@@ -1,8 +1,21 @@
+import { getDatabase, ref, onValue } from "firebase/database";
+import { useEffect,useState } from "react";
+
+
 const Experience= () => {
+  const [Experience, setExperience] = useState ({})
+    useEffect (() => {
+        const db = getDatabase();
+        const ExperienceRef = ref(db, "Experience");
+        onValue(ExperienceRef, (snapshot) => {
+            const data = snapshot.val();
+            setExperience(data);
+        });
+      }, []);
     return(
         <section id="experience" className="experience">
     <div className="section-heading text-center">
-      <h2>experience</h2>
+      <h2>{Experience.title}</h2>
     </div>
     <div className="container">
       <div className="experience-content">
@@ -13,8 +26,8 @@ const Experience= () => {
                 <div className="row">
                   <div className="col-md-5">
                     <div className="experience-time text-right">
-                      <h2>2022 - 2024</h2>
-                      <h3>Secretary Assistant</h3>
+                      <h2>{Experience.year1}</h2>
+                      <h3>{Experience.sa}</h3>
                     </div>{/*/.experience-time*/}
                   </div>{/*/.col*/}
                   <div className="col-md-offset-1 col-md-5">
@@ -22,14 +35,11 @@ const Experience= () => {
                       <div className="timeline-content">
                         <h4 className="title">
                           <span><i className="fa fa-circle" aria-hidden="true" /></span>
-                          Community Social Activity
+                          {Experience.csa}
                         </h4>
-                        <h5>Yembepioper, Segar Tor, Sauwandarek (Papua)</h5>
+                        <h5>{Experience.papua}</h5>
                         <p className="description">
-                        Actively involved in community social activities, specializing in
- teaching children and promoting Adventist education,
- introduction to Computer, and creating a friendly environment
- classroom through interactive and engaging activities
+                        {Experience.desc1}
                         </p>
                       </div>{/*/.timeline-content*/}
                     </div>{/*/.timeline*/}
@@ -44,24 +54,20 @@ const Experience= () => {
                     <div className="experience-time">
                       <h2>
                         <span><i className="fa fa-circle" aria-hidden="true" /></span>
-                        January - Mei (2024)
+                        {Experience.year2}
                       </h2>
-                      <h3>Assistant Lecturer</h3>
+                      <h3>{Experience.al}</h3>
                     </div>{/*/.experience-time*/}
                   </div>{/*/.col*/}
                   <div className="col-md-5">
                     <div className="timeline">
                       <div className="timeline-content text-right">
                         <h4 className="title">
-                          Universitas Klabat
+                          {Experience.unklab}
                         </h4>
-                        <h5>Airmadidi</h5>
+                        <h5>{Experience.alamat}</h5>
                         <p className="description">
-                        As an assistant lecturer in the Faculty of Computer Science, my
- duties included checking assignments, quizzes, exams, giving
- grades, guarding the classroom, and counseling for the subject
- Object Oriented Programming, Back-End Web Developer, and
- Full-Stack Enggineering
+                        {Experience.desc2}
                         </p>
                       </div>{/*/.timeline-content*/}
                     </div>{/*/.timeline*/}
@@ -70,9 +76,9 @@ const Experience= () => {
                     <div className="experience-time">
                       <h2>
                         <span><i className="fa fa-circle" aria-hidden="true" /></span>
-                        January - Mei (2024)
+                        {Experience.year3}
                       </h2>
-                      <h3>Assistant Lecturer</h3>
+                      <h3>{Experience.al}</h3>
                     </div>{/*/.experience-time*/}
                   </div>{/*/.col*/}
                 </div>
@@ -83,8 +89,8 @@ const Experience= () => {
                 <div className="row">
                   <div className="col-md-5">
                     <div className="experience-time text-right">
-                      <h2>2023 - 2024</h2>
-                      <h3>Public Relation</h3>
+                      <h2>{Experience.year4}</h2>
+                      <h3>{Experience.pr}</h3>
                     </div>{/*/.experience-time*/}
                   </div>{/*/.col*/}
                   <div className="col-md-offset-1 col-md-5">
@@ -92,13 +98,11 @@ const Experience= () => {
                       <div className="timeline-content">
                         <h4 className="title">
                           <span><i className="fa fa-circle" aria-hidden="true" /></span>
-                          IKMAPAP UNKLAB (Ikatan Mahasiswa Papua)
+                          {Experience.ikm}
                         </h4>
-                        <h5>Universitas Klabat</h5>
+                        <h5>{Experience.unklab}</h5>
                         <p className="description">
-                        Creating and disseminating all information related to the
- organization to its members, reaching out to all members,
- and sharing reflections.
+                       {Experience.desc4}
                         </p>
                       </div>{/*/.timeline-content*/}
                     </div>{/*/.timeline*/}
@@ -113,32 +117,23 @@ const Experience= () => {
                     <div className="experience-time">
                       <h2>
                         <span><i className="fa fa-circle" aria-hidden="true" /></span>
-                        August 2024
+                        {Experience.year5}
                       </h2>
-                      <h3>Filkom Day Committe</h3>
+                      <h3>{Experience.filkom}</h3>
                     </div>{/*/.experience-time*/}
                   </div>{/*/.col*/}
                   <div className="col-md-5">
                     <div className="timeline">
                       <div className="timeline-content text-right">
                         <h4 className="title">
-                          Person in Charge
+                          {Experience.pic}
                         </h4>
-                        <h5>Universitas Klabat</h5>
+                        <h5>{Experience.unklab}</h5>
                         <p className="description">
-                        Committee members are encouraged to bring creativity and enthusiasm to make FILKOM Day a memorable experience for all.
+                        {Experience.desc5}
                         </p>
                       </div>{/*/.timeline-content*/}
                     </div>{/*/.timeline*/}
-                  </div>{/*/.col*/}
-                  <div className="col-md-offset-1 col-md-5 experience-time-main">
-                    <div className="experience-time">
-                      <h2>
-                        <span><i className="fa fa-circle" aria-hidden="true" /></span>
-                        August 2024
-                      </h2>
-                      <h3>Filkom Day Committe</h3>
-                    </div>{/*/.experience-time*/}
                   </div>{/*/.col*/}
                 </div>
               </div>{/*/.single-timeline-box*/}
